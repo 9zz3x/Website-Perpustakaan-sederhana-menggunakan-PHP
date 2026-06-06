@@ -1,0 +1,399 @@
+/* ROOT VARIABLES */
+
+:root {
+    --primary-indigo: #4f46e5;
+    --primary-hover: #4338ca;
+    --sidebar-bg: #0f172a;
+    --body-bg: #f8fafc;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+
+/* APP LAYOUT */
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    padding: 2rem 1.5rem;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 3rem;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-indigo);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.logo-text {
+    color: white;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    color: #94a3b8;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.nav-item i {
+    font-size: 1.2rem;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: #1e293b;
+    color: white;
+}
+
+.nav-item.active {
+    background: var(--primary-indigo);
+}
+
+
+/* MAIN CONTENT */
+
+.main-content {
+    margin-left: 260px;
+    flex-grow: 1;
+    padding: 2.5rem;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.top-header h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.top-header p {
+    color: var(--text-muted);
+}
+
+.btn-indigo {
+    background-color: var(--primary-indigo);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: none;
+}
+
+.btn-indigo:hover {
+    background-color: var(--primary-hover);
+    color: white;
+}
+
+
+/* STATS CARDS */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+}
+
+.stat-icon.indigo {
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+.stat-icon.emerald {
+    background: #ecfdf5;
+    color: #10b981;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    display: block;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+
+/* DATA CARD & TABLE */
+
+.data-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.card-header-flex h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+
+/* SEARCH FORM */
+
+.search-form {
+    position: relative;
+    width: 300px;
+}
+
+.search-form i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.search-form input {
+    width: 100%;
+    padding: 10px 15px 10px 45px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: var(--body-bg);
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-form input:focus {
+    border-color: var(--primary-indigo);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+
+/* CUSTOM TABLE */
+
+.custom-table thead th {
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.custom-table tbody td {
+    padding: 20px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.buku-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.judul-buku {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.penulis-buku {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+
+/* STATUS BADGE */
+
+.badge-status {
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.is-available {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.is-borrowed {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+
+/* ACTION BUTTONS */
+
+.btn-icon {
+    width: 35px;
+    height: 35px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.2s;
+    margin: 0 3px;
+}
+
+.btn-icon.edit {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.btn-icon.delete {
+    background: #fff1f2;
+    color: #e11d48;
+}
+
+.btn-icon:hover {
+    transform: scale(1.1);
+}
+
+
+/* Memastikan tombol di dalam tabel bisa diklik */
+
+.action-btns {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    z-index: 100;
+}
+
+.btn-icon {
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    z-index: 101;
+    /* Pastikan selalu di atas */
+}
+
+
+/* --- FIX UNTUK TOMBOL AKSI --- */
+
+
+/* 1. Pastikan area aksi memiliki posisi relatif agar z-index bekerja */
+
+.action-btns {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+}
+
+
+/* 2. Pastikan btn-icon tidak terhalang oleh elemen lain */
+
+.btn-icon {
+    position: relative;
+    z-index: 105;
+    /* Lebih tinggi dari container utama */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+
+/* 3. Mencegah efek transisi mengganggu klik */
+
+.btn-icon:hover {
+    transform: scale(1.15);
+    filter: brightness(0.9);
+}
+
+
+/* 4. Pastikan sel tabel tidak memblokir event klik */
+
+.custom-table tbody td {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* 5. Khusus untuk memastikan tidak ada elemen yang menutupi main-content */
+
+.main-content {
+    position: relative;
+    z-index: 2;
+}
